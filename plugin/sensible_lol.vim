@@ -63,11 +63,26 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" 80-character strictness
-" TODO: Big todo is to make this dynamic to filetype.
-set textwidth=81
-set colorcolumn=+1
+" Auto commands--------------------
 
 " File extension collision! Apparently vim natively thinks .md files are something
 " called Modula-2 files. .md files are always markdown in my world.
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+" 80-character strictness
+function! s:ToggleOnReinforceEightyChars()
+    set textwidth=81
+    set colorcolumn=+1
+endfunction
+
+function! s:ToggleOffReinforceEightyChars()
+    set textwidth=0
+    set colorcolumn=
+endfunction
+
+" Order of execution of these statements matter where the more specific command
+" gets overridden with the more generic one.  This is not ideal; however, this is
+" a vim thing and is the approach recommended in :help autocommand-pattern.
+autocmd BufNewFile,BufReadPost *.* call s:ToggleOffReinforceEightyChars()
+autocmd BufNewFile,BufReadPost *.py call s:ToggleOnReinforceEightyChars()
+autocmd BufNewFile,BufReadPost *.vim call s:ToggleOnReinforceEightyChars()
