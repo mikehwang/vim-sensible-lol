@@ -86,3 +86,26 @@ endfunction
 autocmd BufNewFile,BufReadPost *.* call s:ToggleOffReinforceEightyChars()
 autocmd BufNewFile,BufReadPost *.py call s:ToggleOnReinforceEightyChars()
 autocmd BufNewFile,BufReadPost *.vim call s:ToggleOnReinforceEightyChars()
+
+" List vs linebreak
+" Apparently in vim linebreak gets turned off when list is turned on. I think
+" this is a todo item for them. This issue is a priority 7 item on their todos -
+" help todo.
+" See here http://vim.wikia.com/wiki/Word_wrap_without_line_breaks
+"
+" This is coupled to the reinforcement-of-80-chars because I only really
+" care about whitespaces when I'm programming but keep it separated for now to
+" keep it clean.
+
+function! s:ToggleOnLinebreak()
+    set nolist
+    set linebreak
+endfunction
+
+function! s:ToggleOffLinebreak()
+    set list
+endfunction
+
+autocmd BufNewFile,BufReadPost *.* call s:ToggleOnLinebreak()
+autocmd BufNewFile,BufReadPost *.py call s:ToggleOffLinebreak()
+autocmd BufNewFile,BufReadPost *.vim call s:ToggleOffLinebreak()
