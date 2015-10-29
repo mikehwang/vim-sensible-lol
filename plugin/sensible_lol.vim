@@ -67,3 +67,7 @@ set noswapfile
 " TODO: Big todo is to make this dynamic to filetype.
 set textwidth=81
 set colorcolumn=+1
+
+" File extension collision! Apparently vim natively thinks .md files are something
+" called Modula-2 files. .md files are always markdown in my world.
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
