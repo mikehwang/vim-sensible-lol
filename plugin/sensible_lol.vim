@@ -1,6 +1,6 @@
 " sensible_lol.vim - Settings Michael Hwang has grown to like
 " Maintainer:   Michael Hwang
-" Version:      0.1.0
+" Version:      0.2.0
 
 
 " Automatically change working directory to the file you are working on.
@@ -86,6 +86,7 @@ endfunction
 autocmd BufNewFile,BufReadPost *.* call s:ToggleOffReinforceEightyChars()
 autocmd BufNewFile,BufReadPost *.py call s:ToggleOnReinforceEightyChars()
 autocmd BufNewFile,BufReadPost *.vim call s:ToggleOnReinforceEightyChars()
+autocmd BufNewFile,BufReadPost *.sh call s:ToggleOnReinforceEightyChars()
 
 " List vs linebreak
 " Apparently in vim linebreak gets turned off when list is turned on. I think
@@ -109,3 +110,4 @@ endfunction
 autocmd BufNewFile,BufReadPost *.* call s:ToggleOnLinebreak()
 autocmd BufNewFile,BufReadPost *.py call s:ToggleOffLinebreak()
 autocmd BufNewFile,BufReadPost *.vim call s:ToggleOffLinebreak()
+autocmd BufNewFile,BufReadPost *.sh call s:ToggleOffLinebreak()
