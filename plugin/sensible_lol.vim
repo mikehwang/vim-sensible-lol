@@ -87,6 +87,8 @@ autocmd BufNewFile,BufReadPost *.* call s:ToggleOffReinforceEightyChars()
 autocmd BufNewFile,BufReadPost *.py call s:ToggleOnReinforceEightyChars()
 autocmd BufNewFile,BufReadPost *.vim call s:ToggleOnReinforceEightyChars()
 autocmd BufNewFile,BufReadPost *.sh call s:ToggleOnReinforceEightyChars()
+autocmd BufNewFile,BufReadPost *.clj call s:ToggleOnReinforceEightyChars()
+autocmd BufNewFile,BufReadPost *.cljs call s:ToggleOnReinforceEightyChars()
 
 " List vs linebreak
 " Apparently in vim linebreak gets turned off when list is turned on. I think
@@ -111,3 +113,12 @@ autocmd BufNewFile,BufReadPost *.* call s:ToggleOnLinebreak()
 autocmd BufNewFile,BufReadPost *.py call s:ToggleOffLinebreak()
 autocmd BufNewFile,BufReadPost *.vim call s:ToggleOffLinebreak()
 autocmd BufNewFile,BufReadPost *.sh call s:ToggleOffLinebreak()
+autocmd BufNewFile,BufReadPost *.clj call s:ToggleOffLinebreak()
+autocmd BufNewFile,BufReadPost *.cljs call s:ToggleOffLinebreak()
+
+" Clojure related
+" For plugin, luochen1990/rainbow.
+" NOTE: Tried out kien/rainbow_parentheses.vim but the functionality wouldn't work
+" when new files were opened or created. Tried toggling with BufNewFile and
+" BufReadPost but that would toggle only the file that had rainbox parantheses on
+let g:rainbow_active = 1
