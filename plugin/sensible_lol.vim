@@ -89,6 +89,7 @@ autocmd BufNewFile,BufReadPost *.vim call s:ToggleOnReinforceEightyChars()
 autocmd BufNewFile,BufReadPost *.sh call s:ToggleOnReinforceEightyChars()
 autocmd BufNewFile,BufReadPost *.clj call s:ToggleOnReinforceEightyChars()
 autocmd BufNewFile,BufReadPost *.cljs call s:ToggleOnReinforceEightyChars()
+autocmd BufNewFile,BufReadPost *.js call s:ToggleOnReinforceEightyChars()
 
 " List vs linebreak
 " Apparently in vim linebreak gets turned off when list is turned on. I think
@@ -115,6 +116,7 @@ autocmd BufNewFile,BufReadPost *.vim call s:ToggleOffLinebreak()
 autocmd BufNewFile,BufReadPost *.sh call s:ToggleOffLinebreak()
 autocmd BufNewFile,BufReadPost *.clj call s:ToggleOffLinebreak()
 autocmd BufNewFile,BufReadPost *.cljs call s:ToggleOffLinebreak()
+autocmd BufNewFile,BufReadPost *.js call s:ToggleOffLinebreak()
 
 " Clojure related
 " For plugin, luochen1990/rainbow.
@@ -122,3 +124,6 @@ autocmd BufNewFile,BufReadPost *.cljs call s:ToggleOffLinebreak()
 " when new files were opened or created. Tried toggling with BufNewFile and
 " BufReadPost but that would toggle only the file that had rainbox parantheses on
 let g:rainbow_active = 1
+
+" Javascript related
+autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab
