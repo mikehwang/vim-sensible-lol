@@ -1,6 +1,6 @@
 " sensible_lol.vim - Settings Michael Hwang has grown to like
 " Maintainer:   Michael Hwang
-" Version:      0.2.0
+" Version:      1.0.0
 
 
 " Automatically change working directory to the file you are working on.
